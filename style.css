@@ -2,6 +2,9 @@
 
 body {
   font-family: Roboto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  background-color: var(--bgc-color);
 }
 
 *,
@@ -12,7 +15,25 @@ body {
   padding: 0;
 }
 
+li {
+  list-style-type: none;
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  transition: 150ms ease;
+  height: 30px;
+  border-radius: 9px;
+  color: black;
+}
+
+a:hover {
+  background-color: var(--side-bar-btn-bgc-color);
+}
+
 :root {
+  --bgc-color: #e2e8f6;
   /* Used for the sidebar unhovered and unavtive buttons and the sidebar background*/
   --side-bar-main-color: #fefefe;
 
@@ -21,4 +42,62 @@ body {
 
   /* Used for active sidebar btns */
   --active-sidebar-btns-bgc: #675bfd;
+}
+
+/* SideBar */
+aside {
+  background-color: var(--side-bar-main-color);
+  width: min(20vw, 230px);
+  height: 100vh;
+  border-radius: 10px;
+}
+
+aside h1 {
+  font-size: clamp(0.2rem, 5vw, 0.9rem);
+  font-weight: lighter;
+  text-align: center;
+  margin-top: 8px;
+}
+
+aside button {
+  width: 100%;
+  margin-top: 10px;
+  height: 30px;
+  font-size: 1.1rem;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  transition: 150ms ease;
+}
+aside button.active {
+  background-color: var(--active-sidebar-btns-bgc);
+  color: white;
+}
+aside button img {
+  transition: 150ms ease;
+}
+aside button.active img {
+  transform: rotate(90deg);
+}
+
+#subMenu li {
+  text-indent: 20px;
+}
+#subMenu {
+  /* display: grind;
+  grid-template-rows: 1fr; */
+  height: 0;
+  transition: 300ms ease;
+  margin-top: 5px;
+  gap: 2px;
+  overflow: hidden;
+}
+aside:has(button.active) #subMenu {
+  height: 250px;
 }
