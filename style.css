@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic");
+
+body {
+  font-family: Roboto;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Used for the sidebar unhovered and unavtive buttons and the sidebar background*/
+  --side-bar-main-color: #fefefe;
+
+  /* Used for the background color for the hovered sidebar buttons */
+  --side-bar-btn-bgc-color: #f5f3fe;
+
+  /* Used for active sidebar btns */
+  --active-sidebar-btns-bgc: #675bfd;
+}
